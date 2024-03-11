@@ -1,11 +1,13 @@
 import { Routes, Route } from "react-router-dom";
+import Layout from "./containers/Layouts/Layout";
+import { publicRoutes, privateRoutes } from "./routes";
 
 const App = (props) => {
     const isLoggedIn = props.isLoggedIn;
     return (
         <Routes>
             { publicRoutes.map((publicRoute, index) => {
-                const PublicLayout = publicRoute.layout || DefaultLayout;
+                const PublicLayout = publicRoute.layout || Layout;
                 const PublicPage = publicRoute.component;
 
                 return (
@@ -18,7 +20,7 @@ const App = (props) => {
             })}
 
             { isLoggedIn && privateRoutes.map((privateRoute, index) => {
-                const PrivateLayout = privateRoute.layout || DefaultLayout;
+                const PrivateLayout = privateRoute.layout || Layout;
                 const PrivatePage = privateRoute.component;
 
                 return (
