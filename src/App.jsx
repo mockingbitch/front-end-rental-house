@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Layout from "./containers/Layouts/Layout";
+import Layout from "./containers/layouts/Layout";
 import { publicRoutes, privateRoutes } from "./routes";
 
 const App = (props) => {

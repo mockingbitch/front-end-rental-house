@@ -33,7 +33,7 @@ const HeaderSignIn = () => {
                                 placeholder="Enter something..."
                             /> */}
                             </div>
-                            <button className="buttonImage right">
+                            <button className="button-image right">
                             <img src="/img/icon/Category.svg" alt="" />
                             </button>
                         </div>

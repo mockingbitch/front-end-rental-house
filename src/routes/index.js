@@ -1,8 +1,9 @@
 import Home from "../containers/Home/Home";
+import Login from "../containers/auth/Login";
 
 const publicRoutes = [
     { path: '/', component: Home },
-    // { path: '/login', component: Login}
+    { path: '/login', component: Login}
 ];
 
 const privateRoutes = [

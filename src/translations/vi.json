@@ -1,0 +1,82 @@
+{
+    "common": {
+        "add": "Thêm mới",
+        "edit": "Sửa",
+        "delete": "Xóa",
+        "decentralize": "Decentralize",
+        "close": "Đóng",
+        "save": "Lưu",
+        "refresh": "Làm mới ",
+        "accept": "Chấp nhận",
+        "confirm": "Xác nhận",
+        "confirm-this-task": "Are you sure to process this task?",
+        "fail-to-load-data": "Lỗi load data",
+        "unknown-error": "There was an error",
+        "internal-server-error": "Internal server error",
+        "bad-request": "Bad request",
+        "forbiden-request": "Invalid input data",
+        "fail-to-load-all-code": "Fail to load data from allcode",
+        "sum": "Tổng",
+        "name_vi": "Tên (Vi)",
+        "name_en": "Tên (En)",
+        "description_vi": "Mô tả (Vi)",
+        "description_en": "Mô tả (En)",
+        "created_at": "Ngày tạo",
+        "profile": "Trang cá nhân",
+        "welcome": "Chào mừng đến với Rent Room!",
+        "dashboard": "Trang quản trị",
+        "name": "Tên",
+        "description": "Mô tả"
+    },
+    "message": {
+        "created": "Tạo mới!",
+        "updated": "Sửa!",
+        "create_tag": "Tạo mới thẻ thành công",
+        "create_category": "Tạo mới danh mục thành công",
+        "update_tag": "Sửa thẻ thành công",
+        "update_category": "Sửa danh mục thành công"
+    },
+    "auth": {
+        "login": "Đăng nhập",
+        "register": "Đăng ký",
+        "sign_in_with": "Đăng nhập bằng",
+        "sign_in_with_credentials": "Hoặc đăng nhập với",
+        "remember_me": "Lưu mật khẩu",
+        "forgot_password": "Quên mật khẩu",
+        "create_new_account": "Tạo tài khoản",
+        "email": "Email",
+        "password": "Mật khẩu"
+    },
+    "category": {
+        "name": "Danh mục",
+        "table": "Danh sách danh mục",
+        "create": "Tạo mới danh mục",
+        "update": "Sửa danh mục",
+        "delete": "Xóa danh mục"
+    },
+    "tag": {
+        "table": "Danh sách thẻ",
+        "create": "Tạo mới thẻ",
+        "update": "Sửa thẻ",
+        "delete": "Xóa thẻ"
+    },
+    "house": {
+        "table": "Danh sách nhà",
+        "create": "Tạo mới nhà",
+        "update": "Sửa nhà",
+        "delete": "Xóa nhà"
+    },
+    "routes": {
+        "category": "Danh mục",
+        "dashboard": "Trang quản trị",
+        "tag": "Thẻ",
+        "house": "Nhà",
+        "icons": "Icons",
+        "user-profile": "Trang cá nhân",
+        "table": "Bảng",
+        "login": "Đăng nhập",
+        "register": "Đăng ký",
+        "test": "Test",
+        "house_holder": "Trang chủ trọ"
+    }
+}
