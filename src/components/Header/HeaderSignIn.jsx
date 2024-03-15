@@ -1,8 +1,10 @@
 import React from 'react'
 import './_header.scss'
-import logo from "../../assets/images/logo/RentalHouse.svg"
+import logo from "../../assets/images/logo/RentalHouse.svg";
+import { useTranslation } from "react-i18next";
 
 const HeaderSignIn = () => {
+    const { t, i18n } = useTranslation();
     return (
         <>
             <div className="header-signin">
@@ -67,6 +69,11 @@ const HeaderSignIn = () => {
                     </div>
                     <div className="line-full" /> */}
                 </div>
+            </div>
+            <div>
+                ...
+                <button onClick={() => i18n.changeLanguage('vi')}>vi</button>
+                <button onClick={() => i18n.changeLanguage('en')}>en</button>
             </div>
         </>
     )

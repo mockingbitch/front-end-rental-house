@@ -48,7 +48,9 @@
         "forgot_password": "Forgot Password",
         "create_new_account": "Create New Account",
         "email": "Email",
-        "password": "Password"
+        "password": "Password",
+        "enter_email": "Enter your email address",
+        "password_placeholder": "Enter your password"
     },
     "category": {
         "name": "Category",

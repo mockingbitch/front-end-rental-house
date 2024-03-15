@@ -1,81 +1,81 @@
 header{
-  h1{
-    display: none;
-  }
-  .navPc{
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: $fz-text-xxl;
-    a{
-      color: $text-gray-cl;
-      white-space: nowrap;
+    h1{
+        display: none;
     }
-    &__left{
-      display: flex;
-      .logo{
-        // margin-right: 75px;
-      }
-      ul{
+    .navPc{
+        height: 100px;
         display: flex;
-        li{
-          margin-right: 55px;
-        }
-      }
-    }
-    &__right{
-      display: flex;
-      a{
-        i {
-          padding-right: 5px;
-        }
-        display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        background-color: $white-cl;
-        border: none;
-        padding: 10px 20px;
-        &.border{
-          border: 1px solid $text-green-cl;
-          border-radius: 8px;
+        font-size: $fz-text-xxl;
+        a{
+            color: $text-gray-cl;
+            white-space: nowrap;
         }
-        &.borderRight{
-          border-right: 1px solid $text-green-cl;
-          margin-right: 20px;
+        &__left{
+            display: flex;
+            .logo{
+                // margin-right: 75px;
+            }
+            ul{
+                display: flex;
+                li{
+                    margin-right: 55px;
+                }
+            }
         }
-      }
-    }
-    @include desktop {
-      &__left{
-        display: flex;
-        .logo{
-          // margin-right: 75px;
+        &__right{
+            display: flex;
+            a{
+                i {
+                    padding-right: 5px;
+                }
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $white-cl;
+                border: none;
+                padding: 10px 20px;
+                &.border{
+                    border: 1px solid $text-green-cl;
+                    border-radius: 8px;
+                }
+                &.borderRight{
+                    border-right: 1px solid $text-green-cl;
+                    margin-right: 20px;
+                }
+            }
         }
-        ul{
-          display: flex;
-          li{
-            margin-right: 35px;
-          }
+        @include desktop {
+            &__left{
+                display: flex;
+                .logo{
+                    // margin-right: 75px;
+                }
+                ul{
+                    display: flex;
+                    li{
+                        margin-right: 35px;
+                    }
+                }
+            }
         }
-      }
+        @include tablet{
+            display: none;
+        }
     }
-    @include tablet{
-      display: none;
+    .navMobile{
+        &__wrap{
+            display: none;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+            .logo{
+                @include mid()
+            }
+            @include tablet{
+                display: flex;
+            }
+        }
     }
-  }
-  .navMobile{
-    &__wrap{
-      display: none;
-      align-items: center;
-      padding: 20px 0;
-      position: relative;
-      .logo{
-        @include mid()
-      }
-      @include tablet{
-        display: flex;
-      }
-    }
-  }
 }

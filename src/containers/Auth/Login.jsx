@@ -1,8 +1,11 @@
-import React, {useState, useEffect, useCallback } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../../redux/slides/authSlide';
+import React, {useState, useEffect, useCallback } from "react"
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../../redux/slides/authSlide";
 import { useNavigate } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
+import { eyeOpenIcon, eyeCloseIcon } from "../../assets/images";
+import "./_login.scss";
+import ErrorMessage from "../../components/Error/ErrorMessage";
 
 const Login = () => {
     const { t } = useTranslation();
@@ -21,6 +24,7 @@ const Login = () => {
             console.log('Logged in', authRedux.user);
             navigate('/');
         }
+        setTimeout(() => setIsLoading(false), 3300);
     }, [authRedux])
 
     const handleOnChange = useCallback(event => {
@@ -39,28 +43,41 @@ const Login = () => {
     
     return (
         <>
-            <input
-              placeholder={ t('auth.email') }
-              type="email"
-              name="email"
-              autoComplete="new-email"
-              onChange={ (e) => handleOnChange(e) }
-            />
-            <input
-              placeholder={t('auth.password')}
-              type="password"
-              name="password"
-              autoComplete="new-password"
-              onChange={ (e) => handleOnChange(e) }
-            />
-            <button
-              className="my-4"
-              color="primary"
-              type="button"
-              onClick={handleSubmit}
-            >
-                { t('auth.login') }
-            </button>
+            <div className="sign-in">
+                <div className="container">
+                    <form className="form">
+                        <div className="form__wrap form__small">
+                            <h2 className="title">{ t('auth.login') }</h2>
+                            <div className="form__wrap-item error">
+                                <label htmlFor="Email">{ t('auth.email') }</label>
+                                <input type="text" name="email" placeholder={ t('auth.email_placeholder') } />
+                                <ErrorMessage message="test" display={false} />
+                            </div>
+                            <div className="form__wrap-item">
+                                <label htmlFor="Password">{ t('auth.password') }</label>
+                                <div className="inputWrap">
+                                    <input type="password" name="password" placeholder={ t('auth.password_placeholder') } />
+                                    <div>
+                                        <i className="icon hide">
+                                            <img src={ eyeOpenIcon } alt="" />
+                                        </i>
+                                        <i className="icon">
+                                            <img src={ eyeCloseIcon } alt="" />
+                                        </i>
+                                    </div>
+                                </div>
+                                <ul className="note">
+                                    <li>※ hint</li>
+                                    <li>※ .note</li>
+                                </ul>
+                            </div>
+                            <button type="submit" className="mainButton bg-green mt-0">
+                                <p>button</p>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </>
     );
 };

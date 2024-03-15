@@ -45,7 +45,9 @@
         "forgot_password": "Quên mật khẩu",
         "create_new_account": "Tạo tài khoản",
         "email": "Email",
-        "password": "Mật khẩu"
+        "password": "Mật khẩu",
+        "email_placeholder": "Nhập vào email",
+        "password_placeholder": "Nhập vào mật khẩu"
     },
     "category": {
         "name": "Danh mục",
