@@ -16,11 +16,12 @@ const Login = () => {
         email: '',
         password: ''
     });
+    const [isPreviewPassword, setIsPreviewPassword] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const authRedux = useSelector(state => state.auth);
 
     useEffect(() => {
-        if (authRedux.user !== null && authRedux.user.access_token !== "") {
+        if (authRedux?.user !== null && authRedux?.user?.access_token !== "") {
             console.log('Logged in', authRedux.user);
             navigate('/');
         }
@@ -32,14 +33,16 @@ const Login = () => {
         setData({ ...data, [name]: value });
     });
 
-    const handleSubmit = () => {
-        setIsLoading(true);
-        setTimeout(() => {
-            const action = login(data);
-            dispatch(action);
-            setIsLoading(false);
-        }, 2000)
-    }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log(data);
+        const action = login(data);
+        dispatch(action);
+    };
+
+    const handleTogglePreviewPassword = () => {
+        setIsPreviewPassword(! isPreviewPassword);
+    };
     
     return (
         <>
@@ -48,21 +51,28 @@ const Login = () => {
                     <form className="form">
                         <div className="form__wrap form__small">
                             <h2 className="title">{ t('auth.login') }</h2>
-                            <div className="form__wrap-item error">
+                            <div className={ `form__wrap-item ${ message?.email ? 'error' : '' }` }>
                                 <label htmlFor="Email">{ t('auth.email') }</label>
-                                <input type="text" name="email" placeholder={ t('auth.email_placeholder') } />
-                                <ErrorMessage message="test" display={false} />
+                                <input
+                                    type="text"
+                                    name="email"
+                                    placeholder={ t('auth.email_placeholder') }
+                                    onClick={e => handleOnChange(e) }
+                                />
+                                <ErrorMessage message={ message?.email } />
                             </div>
                             <div className="form__wrap-item">
                                 <label htmlFor="Password">{ t('auth.password') }</label>
                                 <div className="inputWrap">
-                                    <input type="password" name="password" placeholder={ t('auth.password_placeholder') } />
+                                    <input
+                                        type={ isPreviewPassword ? 'text' : 'password' }
+                                        name="password"
+                                        placeholder={ t('auth.password_placeholder') }
+                                        onClick={e => handleOnChange(e) }
+                                    />
                                     <div>
-                                        <i className="icon hide">
-                                            <img src={ eyeOpenIcon } alt="" />
-                                        </i>
-                                        <i className="icon">
-                                            <img src={ eyeCloseIcon } alt="" />
+                                        <i className="icon" onClick={ handleTogglePreviewPassword }>
+                                            <img src={ isPreviewPassword ? eyeOpenIcon : eyeCloseIcon } alt="" />
                                         </i>
                                     </div>
                                 </div>
@@ -71,8 +81,8 @@ const Login = () => {
                                     <li>※ .note</li>
                                 </ul>
                             </div>
-                            <button type="submit" className="mainButton bg-green mt-0">
-                                <p>button</p>
+                            <button type="submit" className="mainButton bg-green mt-0" onClick={ e => handleSubmit(e) }>
+                                <p>{ t('common.button.login') }</p>
                             </button>
                         </div>
                     </form>

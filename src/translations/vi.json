@@ -26,7 +26,10 @@
         "welcome": "Chào mừng đến với Rent Room!",
         "dashboard": "Trang quản trị",
         "name": "Tên",
-        "description": "Mô tả"
+        "description": "Mô tả",
+        "button": {
+            "login": "Đăng nhập"
+        }
     },
     "message": {
         "created": "Tạo mới!",

@@ -3,7 +3,7 @@ import "./_errorMessage.scss";
 const ErrorMessage = (props) => {
     return (
         <>
-            <ul class={`${props.display ? '' : 'hide'} error-msg`}>
+            <ul className={`${props.display ? '' : 'hide'} error-msg`}>
                 <li>{ props.message }</li>
             </ul>
         </>

@@ -31,7 +31,10 @@
         "welcome": "Welcome to Rent Room!",
         "dashboard": "Dashboard",
         "name": "Name",
-        "description": "Description"
+        "description": "Description",
+        "button": {
+            "login": "Login"
+        }
     },
     "message": {
         "created": "Created!",
@@ -49,7 +52,7 @@
         "create_new_account": "Create New Account",
         "email": "Email",
         "password": "Password",
-        "enter_email": "Enter your email address",
+        "email_placeholder": "Enter your email address",
         "password_placeholder": "Enter your password"
     },
     "category": {

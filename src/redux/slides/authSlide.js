@@ -12,8 +12,7 @@ const initialState = {
 export const login = createAsyncThunk(
     "auth/login",
     async ({email, password}) => {
-        const res = await LoginService({email, password});
-
+        const res =  await LoginService({email, password});
         return res;
     }
 )
@@ -22,8 +21,7 @@ export const logout = createAsyncThunk(
     "auth/logout",
     async (token) => {
         try {
-            const res = await LogoutService(token);
-            return res;
+            return await LogoutService(token);
         } catch (error) {
             return error
         }
@@ -35,8 +33,10 @@ const authSlide = createSlice({
     initialState,
     extraReducers: (builder) => {
         builder.addCase(login.fulfilled, (state, action) => {
-            state.user = action.payload ;
-            state.isLoggedIn = true;
+            if (action.payload?.data?.token) {
+                state.user = action.payload ;
+                state.isLoggedIn = true;
+            }
         })
         // [login.fulfilled]: (state, action) => {
         //     state.user = action.payload ;
