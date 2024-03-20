@@ -25,6 +25,7 @@ const Login = () => {
             console.log('Logged in', authRedux.user);
             navigate('/');
         }
+        console.log(authRedux);
         setTimeout(() => setIsLoading(false), 3300);
     }, [authRedux])
 
@@ -35,7 +36,6 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(data);
         const action = login(data);
         dispatch(action);
     };

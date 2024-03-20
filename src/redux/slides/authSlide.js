@@ -6,14 +6,17 @@ const initialState = {
         access_token : '',
         user : {}
     },
-    isLoggedIn : false
+    error : {},
+    isLoggedIn : false,
+    isLoading : false
 };
 
 export const login = createAsyncThunk(
     "auth/login",
     async ({email, password}) => {
-        const res =  await LoginService({email, password});
-        return res;
+        let response = await LoginService({email, password});
+
+        return response;
     }
 )
 
@@ -32,11 +35,18 @@ const authSlide = createSlice({
     name: 'auth',
     initialState,
     extraReducers: (builder) => {
-        builder.addCase(login.fulfilled, (state, action) => {
-            if (action.payload?.data?.token) {
-                state.user = action.payload ;
-                state.isLoggedIn = true;
-            }
+        builder.addCase(login.pending, (state) => {
+            state.isLoading = true;
+            console.log('pending');
+        })
+        .addCase(login.fulfilled, (state, action) => {
+            console.log('fullfilled');
+            state.user = action.payload ;
+            state.isLoading = false;
+        }).addCase(login.rejected, (state, action) => {
+            console.log('rejected');
+            state.error = action.error;
+            state.isLoggedIn = false;
         })
         // [login.fulfilled]: (state, action) => {
         //     state.user = action.payload ;
