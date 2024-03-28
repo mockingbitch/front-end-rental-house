@@ -86,5 +86,19 @@
         "register": "Register",
         "test": "Test",
         "house_holder": "House Holder"
+    },
+    "validation": {
+        "login": {
+            "email": {
+                "required": "Email is required",
+                "max_length": "Max length 8 characters",
+                "email_regex": "Must be type of email"
+            },
+            "password": {
+                "required": "Password is required",
+                "min_length": "Min length 6 characters",
+                "max_length": "Max length 20 characters"
+            }
+        }
     }
 }
